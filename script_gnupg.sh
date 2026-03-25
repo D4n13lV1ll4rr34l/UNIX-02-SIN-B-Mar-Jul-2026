@@ -9,3 +9,4 @@ gpg --edit-key davidsitotorres8@gmail.com # trust level 4 (full) - David is my c
 gpg --sign-key davidsitotorres8@gmail.com
 gpg --verify Daniel_doc_no_cifrado_firmado.txt
 gpg --verify Daniel_doc_no_cifrado_firmado_binario.txt
+gpg --verify Daniel_firma_separada_doc_no_cifrado.sig Daniel_doc_no_cifrado.txt
