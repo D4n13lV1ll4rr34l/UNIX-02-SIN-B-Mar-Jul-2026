@@ -6,3 +6,4 @@ gpg --sign doc_no_cifrado.txt
 gpg --detach-sign doc_no_cifrado.txt
 gpg --encrypt --sign --armor -r davidsitotorres8@gmail.com doc_no_cifrado.txt
 gpg --edit-key davidsitotorres8@gmail.com # trust level 4 (full) - David is my classmate
+gpg --sign-key davidsitotorres8@gmail.com
