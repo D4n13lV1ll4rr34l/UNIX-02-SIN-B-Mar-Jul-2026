@@ -12,3 +12,4 @@ gpg --verify Daniel_doc_no_cifrado_firmado_binario.txt
 gpg --verify Daniel_firma_separada_doc_no_cifrado.sig Daniel_doc_no_cifrado.txt
 gpg --verify Daniel_firma_separada_doc_no_cifrado.sig Daniel_doc_no_cifrado.txt
 gpg --decrypt Daniel_doc_cifrado.txt
+gpg --decrypt doc_cifrado_y_firmado.txt
