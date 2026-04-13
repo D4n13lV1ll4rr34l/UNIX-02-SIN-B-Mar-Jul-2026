@@ -7,3 +7,4 @@ rm -rf: Deletes files or directories, Deletes directories and everything inside 
 rm -- -rf: Treats files such as arguments, not options.
 ls --help: Shows the help page for the ls command, including all available options and how to use them.
 man ls: Opens the full manual page for the ls command.
+--depth: controls how deep a command should go when working with directories or data structures.
