@@ -8,3 +8,6 @@ rm -- -rf: Treats files such as arguments, not options.
 ls --help: Shows the help page for the ls command, including all available options and how to use them.
 man ls: Opens the full manual page for the ls command.
 --depth: controls how deep a command should go when working with directories or data structures.
+sudo echo "hola" >etc/etc/archivo_protegido: The command doesnt work because the > is executed by the normal user
+echo "hola" | sudo tee /etc/archivo_protegido > /dev/null: Writes "hola" to the file (as root) but Does NOT print anything (output is discarded to /dev/null)
+echo "hola" | sudo tee /etc/archivo_protegido: Writes "hola" to the file (as root), but it does prints "hola" on the screen
