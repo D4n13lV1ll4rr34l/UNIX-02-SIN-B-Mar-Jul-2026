@@ -11,3 +11,4 @@ man ls: Opens the full manual page for the ls command.
 sudo echo "hola" >etc/etc/archivo_protegido: The command doesnt work because the > is executed by the normal user
 echo "hola" | sudo tee /etc/archivo_protegido > /dev/null: Writes "hola" to the file (as root) but Does NOT print anything (output is discarded to /dev/null)
 echo "hola" | sudo tee /etc/archivo_protegido: Writes "hola" to the file (as root), but it does prints "hola" on the screen
+sudo sh -c 'echo' "chao" >>/etc/archivo_protegido': 2
