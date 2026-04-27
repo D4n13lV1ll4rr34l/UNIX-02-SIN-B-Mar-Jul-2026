@@ -117,3 +117,7 @@ touch comun: Creates an empty file named comun.
 ls -l comun: Shows detailed information (permissions, owner, group, size) of comun.
 newgrp: Starts a new shell with a different group ID (changes current group).
 sudo usermod -a -G grupo_test luna: Adds user luna to the group grupo_test.
+* `mkdir -p proyecto/sub`: Creates a directory *proyecto* with a subdirectory *sub*, including parent directories if they don’t exist.
+* `touch proyecto/readme proyecto/sub/datos`: Creates empty files *readme* and *datos* in their respective directories.
+* `sudo chown -R luna:grupo_test proyecto`: Recursively changes the owner to *luna* and group to *grupo_test* for everything inside *proyecto*.
+* `ls -IR proyecto`: Lists the contents of *proyecto* recursively, showing its directory structure.
