@@ -108,3 +108,6 @@ chown luna mi_archivo: Fails because changing ownership requires superuser privi
 
 sudo chown luna mi_archivo: Changes the owner of mi_archivo to user luna.
 
+sudo useradd -m -s /usr/bin/zsh luna: Creates a new user luna with a home directory and Zsh as default shell.
+chown luna mi_archivo: Fails because changing ownership requires superuser privileges.
+sudo chown luna mi_archivo: Changes the owner of mi_archivo to user luna.
