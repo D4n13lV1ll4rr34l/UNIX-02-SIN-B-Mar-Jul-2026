@@ -99,3 +99,12 @@ drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:49 privado
 -rw-rw-rw-  1 codespace codespace     0 Apr 27 12:49 secreto.txt
 -rw-rw-rw-  1 codespace root          6 Apr 27 12:41 test.txt
 @D4n13lV1ll4rr34l ➜ /workspaces/UNIX-02-SIN-B-Mar-Jul-2026 (main) $ 
+
+sudo useradd -m -s /usr/bin/zsh luna: Creates a new user luna with a home directory and Zsh as default shell.
+
+
+chown luna mi_archivo: Fails because changing ownership requires superuser privileges.
+
+
+sudo chown luna mi_archivo: Changes the owner of mi_archivo to user luna.
+
