@@ -111,3 +111,9 @@ sudo chown luna mi_archivo: Changes the owner of mi_archivo to user luna.
 sudo useradd -m -s /usr/bin/zsh luna: Creates a new user luna with a home directory and Zsh as default shell.
 chown luna mi_archivo: Fails because changing ownership requires superuser privileges.
 sudo chown luna mi_archivo: Changes the owner of mi_archivo to user luna.
+sudo groupadd grupo_test: Creates a new group called grupo_test.
+groups: Displays the groups the current user belongs to.
+touch comun: Creates an empty file named comun.
+ls -l comun: Shows detailed information (permissions, owner, group, size) of comun.
+newgrp: Starts a new shell with a different group ID (changes current group).
+sudo usermod -a -G grupo_test luna: Adds user luna to the group grupo_test.
