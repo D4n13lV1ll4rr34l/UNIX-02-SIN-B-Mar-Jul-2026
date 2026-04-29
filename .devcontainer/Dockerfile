@@ -218,23 +218,23 @@ RUN git config --system --add safe.directory '*' \
 # propia terminal integrada de VS Code, pero es buena práctica dejarla
 # definida para que la imagen sea usable también con Docker puro.
 # Prompt del curso para bash
+# Cambiamos el shell por defecto a Zsh
 RUN chsh -s /usr/bin/zsh root
-RUN cat >> /root/.zshrc <<<'EOF'
-PROMPT= '%F{cyan}[Daniel-Villarreal]%f %F{yellow}%1~%f %(?.%F{green}✓.%F{red}✕ %?)%f %# '# ===== Prompt del curso =====
-__set_prompt() {
-    local ec=$?
-    local mark
-    if [ $ec -eq 0 ]; then
-        mark='\[\e[32m\]✓\[\e[0m\]'
-    else
-        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
-    fi
-    PS1="\[\e[36m\][Daniel-Villarreal]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
-}
-PROMPT_COMMAND=__set_prompt
-EOF
-CMD ["/bin/zsh"]
 
+# Configuramos el .zshrc con la sintaxis correcta de Zsh
+RUN cat >> /root/.zshrc <<'EOF'
+# Función para el color del status (Check verde o Equis roja)
+set_prompt_status() {
+    echo "%(?..%F{red}✗ %?%f)"
+}
+
+# Prompt estilo Zsh: [Nombre] Carpeta Check #
+# %F{color} abre color, %f lo cierra. %1~ es el directorio actual.
+PROMPT='%F{cyan}[Daniel-Villarreal]%f %F{yellow}%1~%f %F{green}%(?.✓.)%f$(set_prompt_status) %# '
+EOF
+
+# Aseguramos que el contenedor inicie con Zsh
+CMD ["/bin/zsh"]
 
 
 
