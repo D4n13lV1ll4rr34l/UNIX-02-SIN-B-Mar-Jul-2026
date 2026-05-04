@@ -221,6 +221,20 @@ RUN git config --system --add safe.directory '*' \
 # Cambiamos el shell por defecto a Zsh
 RUN chsh -s /usr/bin/zsh root
 
+__set_prompt() {
+    local ec=$?
+    local mark
+    if [ $ec -eq 0 ]; then
+        mark='\[\e[32m\]✓\[\e[0m\]'
+    else
+        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
+    fi
+    PS1="\[\e[36m\][Esteban-Trujillo]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
+}
+PROMPT_COMMAND=__set_prompt
+EOF
+CMD ["/bin/bash"]
+
 # Configuramos el .zshrc con la sintaxis correcta de Zsh
 RUN cat >> /root/.zshrc <<'EOF'
 # Función para el color del status (Check verde o Equis roja)
