@@ -117,3 +117,21 @@ pwd
 
 # Useful when navigating between multiple directories
 # Helps avoid mistakes like deleting or editing wrong files
+
+TERMINAL PROMPT AND CURRENT DIRECTORY
+
+# The terminal prompt shows useful information, including:
+# - Username
+# - Hostname
+# - Current working directory
+
+# "~" represents the home directory
+# Equivalent to:
+# /home/sysadmin
+
+# The prompt helps you quickly identify your current location
+# without needing to run the pwd command every time
+
+# Useful for:
+# - Avoiding mistakes (like deleting files in the wrong directory)
+# - Navigating complex directory structures
