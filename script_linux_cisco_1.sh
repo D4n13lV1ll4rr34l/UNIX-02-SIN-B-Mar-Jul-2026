@@ -89,3 +89,31 @@ aptitude -vvv moo
 
 # Alternative way (equivalent)
 aptitude -v -v moo
+
+PWD COMMAND (PRINT WORKING DIRECTORY)
+# Prints the current working directory (your current location in the filesystem)
+pwd
+
+# Example output:
+# /home/sysadmin
+
+# This means the user is currently inside their home directory
+
+# The path shown by pwd represents the absolute location in the filesystem
+# Example:
+# /home/sysadmin/Documents
+
+# "/" represents the root directory (top of the filesystem)
+
+# The symbol "~" represents the user's home directory
+# Example:
+# ~ = /home/sysadmin
+
+# You may see it in the terminal prompt:
+# sysadmin@localhost:~$
+
+# Check your current location before performing file operations
+pwd
+
+# Useful when navigating between multiple directories
+# Helps avoid mistakes like deleting or editing wrong files
