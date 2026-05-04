@@ -193,3 +193,64 @@ cd Art
 
 # Or directly using relative path
 cd Documents/School/Art
+
+LS COMMAND (LIST FILES AND DIRECTORIES)
+
+
+# Lists files in the current directory
+ls
+
+# Lists files in a specific directory
+ls /var/log
+
+# Displays detailed information about files
+ls -l
+
+# Example with directory
+ls -l /var/log
+
+# Output fields explanation:
+# - File type (-, d, l, etc.)
+# - Permissions (rwx)
+# - Number of links
+# - Owner
+# - Group
+# - File size
+# - Last modification date
+# - File name
+
+# -  -> regular file
+# d  -> directory
+# l  -> symbolic link
+# c  -> character device
+# b  -> block device
+# p  -> pipe
+# s  -> socket
+
+# Sort files by modification time (newest first)
+ls -lt
+
+# Sort files by size (largest first)
+ls -lS
+
+# Reverse the sorting order
+ls -lr
+
+# Combine sorting options
+ls -lSr
+
+# Lists files in /var/log sorted by time
+ls -lt /var/log
+
+# Lists files in /var/log sorted by size (smallest first)
+ls -lSr /var/log
+
+# Find most recently modified files
+ls -lt
+
+# Find largest files in a directory
+ls -lS
+
+# Useful for analyzing logs in /var/log
+ls -lt /var/log
+
