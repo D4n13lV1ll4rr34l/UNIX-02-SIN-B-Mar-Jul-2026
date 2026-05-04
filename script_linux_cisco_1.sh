@@ -290,3 +290,54 @@ sudo ls /root
 # Avoid staying logged in as root unnecessarily
 # This reduces the risk of accidental system damage
 
+# List file permissions using long format
+ls -l hello.sh
+
+# Example output:
+# -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20 2017 hello.sh
+
+# The permission string is divided into 4 parts:
+# [type][owner][group][others]
+
+# Example:
+# -rw-r--r--
+
+# First character = file type:
+# -  -> regular file
+# d  -> directory
+
+# rw- -> owner permissions
+# r-- -> group permissions
+# r-- -> others permissions
+
+# Owner: user who created the file
+# Group: users in the same group
+# Others: all other users
+
+# r (read)    -> read file content
+# w (write)   -> modify file
+# x (execute) -> run file as a program
+
+# Files:
+# r -> read content
+# w -> modify content
+# x -> execute file
+
+# Directories:
+# r -> list files
+# w -> add/remove files
+# x -> enter directory (cd)
+
+
+# Show permissions of a file
+ls -l hello.sh
+
+# Show permissions of current directory
+ls -l
+
+# If you are the owner of the file,
+# only the owner permissions apply
+
+# Even if you belong to the group,
+# group permissions will NOT be used
+
