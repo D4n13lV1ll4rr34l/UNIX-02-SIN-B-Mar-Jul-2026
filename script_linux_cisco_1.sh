@@ -25,6 +25,7 @@ ls -lh
 
 # Real-world use:
 # ls -la is useful for debugging hidden configuration filesgit add script_linux_cisco_1.sh
+ARGUMENTS IN COMMANDS
 # Arguments specify what the command should act upon
 # General syntax:
 # command [options] [arguments]
@@ -46,3 +47,45 @@ ls -la Documents
 # Real-world use:
 # Using arguments allows you to inspect directories without changing location
 # This is useful when managing multiple folders quickly
+
+OPTIONS IN COMMANDS
+# Options modify the behavior of a command
+# They are usually preceded by a hyphen (-)
+
+# Example: long listing format
+ls -l
+
+# This displays detailed information such as:
+# permissions, owner, file size and modification date
+
+# Lists files in reverse alphabetical order
+ls -r
+
+# Combines long format and reverse order
+ls -lr
+
+# Same result using separate options
+ls -l -r
+
+# Multiple options can be combined into one
+# This is equivalent:
+ls -rl
+
+# Lists all files (including hidden ones) in long format, reversed order
+ls -lar
+
+# Real-world use:
+# Combining options helps customize output efficiently,
+# especially when analyzing large directories
+# Some commands use -v (verbose) to show more detailed output
+# Example with aptitude (may not work in all environments)
+
+
+aptitude -v moo
+aptitude -vv moo
+aptitude -vvv moo
+
+# Each additional -v increases verbosity level
+
+# Alternative way (equivalent)
+aptitude -v -v moo
