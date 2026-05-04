@@ -526,3 +526,39 @@ cp file.txt file_backup.txt
 
 # Copy configuration files safely
 cp config.conf config.conf.bak
+
+ DD COMMAND (LOW-LEVEL COPY)
+
+ # dd is used for low-level copying (bit by bit)
+# It can copy files, partitions, or entire disks
+
+# Syntax:
+# dd if=input_file of=output_file [options]
+
+# Create a file filled with zeros (50 MB)
+dd if=/dev/zero of=/tmp/swapex bs=1M count=50
+
+# if = input file
+# of = output file
+# bs = block size
+# count = number of blocks
+
+# if -> input file (source)
+# of -> output file (destination)
+# bs -> block size (e.g., 1M = 1 megabyte)
+# count -> number of blocks to copy
+
+# Create a swap file
+dd if=/dev/zero of=/tmp/swapfile bs=1M count=100
+
+# Copy raw data to a file (backup example)
+dd if=/dev/sda of=/tmp/backup.img
+
+# Restore from backup
+dd if=/tmp/backup.img of=/dev/sda
+
+# dd can overwrite entire disks if used incorrectly
+# Always double-check input (if) and output (of)
+
+# Example (dangerous if wrong device is used):
+# dd if=/dev/sda of=/dev/sdb
