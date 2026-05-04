@@ -135,3 +135,61 @@ TERMINAL PROMPT AND CURRENT DIRECTORY
 # Useful for:
 # - Avoiding mistakes (like deleting files in the wrong directory)
 # - Navigating complex directory structures
+
+# Changes the current working directory
+cd Documents
+
+# After running this command, the terminal prompt updates:
+# ~/Documents
+
+# "/" represents the root directory (top of the filesystem)
+cd /
+
+# Moves directly to the root directory
+
+# Absolute paths start from the root directory (/)
+# Example:
+cd /home/sysadmin
+
+# This always takes you to the same location regardless of your current directory
+
+# Verify location
+pwd
+
+# Relative paths start from the current directory
+# Example:
+cd Documents
+
+# Navigating through multiple directories
+cd School/Art
+
+# Equivalent to:
+cd School
+cd Art
+
+# Print the current directory to confirm navigation
+pwd
+
+# Move to parent directory (one level up)
+cd ..
+
+# Move to current directory (not very useful for cd but important for other commands)
+cd .
+
+# Move to home directory from anywhere
+cd ~
+
+# Equivalent to:
+cd /home/sysadmin
+
+
+# Quickly return to home directory
+cd ~
+
+# Navigate step by step safely
+cd Documents
+cd School
+cd Art
+
+# Or directly using relative path
+cd Documents/School/Art
