@@ -290,6 +290,8 @@ sudo ls /root
 # Avoid staying logged in as root unnecessarily
 # This reduces the risk of accidental system damage
 
+FILE PERMISSIONS
+
 # List file permissions using long format
 ls -l hello.sh
 
@@ -340,4 +342,150 @@ ls -l
 
 # Even if you belong to the group,
 # group permissions will NOT be used
+
+CHMOD COMMAND (CHANGE FILE PERMISSIONS)
+
+# chmod is used to change file or directory permissions
+# Only the owner or root user can modify permissions
+
+# Syntax:
+# chmod [permissions] file
+
+# Structure:
+# chmod [who][action][permissions] file
+
+# Who:
+# u -> user (owner)
+# g -> group
+# o -> others
+# a -> all
+
+# Actions:
+# + -> add permission
+# - -> remove permission
+# = -> set exact permission
+
+# Permissions:
+# r -> read
+# w -> write
+# x -> execute
+
+# Check current permissions
+ls -l hello.sh
+
+# Add execute permission to the owner
+chmod u+x hello.sh
+
+# Verify changes
+ls -l hello.sh
+
+# Now the file should show 'x' in owner permissions
+
+# Run the script from the current directory
+./hello.sh
+
+# "./" means execute from the current directory
+
+# Remove execute permission from others
+chmod o-x hello.sh
+
+# Give read and write permissions to group
+chmod g+rw hello.sh
+
+# Give execute permission to all users
+chmod a+x hello.sh
+
+# Make scripts executable
+chmod u+x script.sh
+
+# Restrict access to sensitive files
+chmod o-r file.txt
+
+CHOWN COMMAND (CHANGE FILE OWNER)
+
+# chown is used to change the owner of a file or directory
+# Changing the owner requires administrative privileges (sudo)
+
+# Syntax:
+# chown [new_owner] file
+
+# List files with ownership details
+ls -l hello.sh
+
+# The third column shows the owner
+# The fourth column shows the group
+
+# Change owner of file to root
+sudo chown root hello.sh
+
+# Verify the change
+ls -l hello.sh
+
+# Now the owner should be 'root'
+
+# Try to execute the script
+./hello.sh
+
+# This may fail if the owner (root) has execute permission
+# but the current user does not have sufficient access
+
+# Execute the script as root
+sudo ./hello.sh
+
+
+# Change group ownership (allowed for file owner)
+chown :sysadmin hello.sh
+
+# Verify group change
+ls -l hello.sh
+
+
+# Assign files to specific users or services
+sudo chown root config.conf
+
+# Useful in server environments for managing access control
+
+FILE VIEWING COMMANDS (cat, head, tail)
+
+# Display full content of a file (best for small files)
+cat animals.txt
+
+# cat = concatenate (used to display file content quickly)
+
+# Warning:
+# Not recommended for large files (too much output)
+
+
+# Show first 10 lines of a file (default)
+head alpha.txt
+
+# Show first 5 lines
+head -n 5 alpha.txt
+
+# Useful for previewing file content
+
+# Show last 10 lines of a file (default)
+tail alpha.txt
+
+# Show last 5 lines
+tail -n 5 alpha.txt
+
+# Useful for checking recent updates in files (like logs)
+
+# Show entire file
+cat alpha.txt
+
+# Show only beginning
+head alpha.txt
+
+# Show only end
+tail alpha.txt
+
+# Preview file before editing
+head file.txt
+
+# Monitor latest entries in logs
+tail /var/log/syslog
+
+# Avoid using cat for large files
 
