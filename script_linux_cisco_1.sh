@@ -254,3 +254,39 @@ ls -lS
 # Useful for analyzing logs in /var/log
 ls -lt /var/log
 
+ADMINISTRATIVE ACCESS (su and sudo)
+
+# Some Linux commands require administrative privileges (root access)
+# This helps protect the system from unauthorized or dangerous actions
+
+# Switch to root user (login shell)
+su -
+
+# Alternative forms:
+su -l
+su --login
+
+# Return to the previous user (exit root session)
+exit
+
+# Prompt returns to:
+# sysadmin@localhost:~$
+
+# Execute a command with administrative privileges without switching users
+sudo ls
+
+# Example: running a restricted command
+sudo sl
+
+# After entering the password, the command runs as root,
+# but you remain as the normal user
+
+# su -> opens a new shell as another user (usually root)
+# sudo -> runs a single command as another user
+
+# Use sudo for safer administrative actions
+sudo ls /root
+
+# Avoid staying logged in as root unnecessarily
+# This reduces the risk of accidental system damage
+
