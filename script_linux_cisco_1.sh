@@ -25,3 +25,24 @@ ls -lh
 
 # Real-world use:
 # ls -la is useful for debugging hidden configuration filesgit add script_linux_cisco_1.sh
+# Arguments specify what the command should act upon
+# General syntax:
+# command [options] [arguments]
+
+# Example: listing the contents of a specific directory
+ls Documents
+
+# This command lists all files inside the "Documents" directory
+# instead of the current working directory
+# Lists files inside Downloads directory
+ls Downloads
+
+# Lists files inside a specific path
+ls /home/sysadmin/Documents
+# Combining options and arguments
+# Lists all files (including hidden ones) in Documents in long format
+ls -la Documents
+
+# Real-world use:
+# Using arguments allows you to inspect directories without changing location
+# This is useful when managing multiple folders quickly
