@@ -489,3 +489,40 @@ tail /var/log/syslog
 
 # Avoid using cat for large files
 
+ CP COMMAND (COPY FILES)
+
+ # cp is used to copy files or directories
+# Syntax:
+# cp source destination
+
+# Copy a file to the current directory (.)
+cp /etc/passwd .
+
+# "." represents the current directory
+
+# Verify the copy
+ls
+
+# Copy file and rename it
+cp animals.txt animals_backup.txt
+
+# Now both files exist:
+ls
+
+
+# Copy file into another directory
+cp animals.txt ~/Documents
+
+# Copy multiple files into a directory
+cp animals.txt alpha.txt ~/Documents
+
+# To copy a file:
+# - Read (r) permission on the source file
+# - Execute (x) permission on source directory
+# - Write (w) + Execute (x) on destination directory
+
+# Create backup before editing a file
+cp file.txt file_backup.txt
+
+# Copy configuration files safely
+cp config.conf config.conf.bak
