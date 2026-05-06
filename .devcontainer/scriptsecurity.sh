@@ -90,3 +90,21 @@ id $USER
 #Restore
 sudo usermod -aG diseno,marketing,grupo_temporal root
 id root #restored
+
+#practice scenario 
+
+mkdir -p ~/lab_chgrp/{proyectos,reportes,scripts}
+
+touch ~/lab_chgrp/proyectos/app.py
+
+touch ~/lab_chgrp/proyectos/config.json
+
+touch ~/lab_chgrp/reportes/informe.txt
+
+touch ~/lab_chgrp/scipts/deploy.sh
+
+touch ~/lab_chgrp/scripts/deploy.sh
+
+#saw the inicial state
+ls-la ~/lab_chgrp/proyectos/
+ls-la ~/lab_chagrp/reportes/
