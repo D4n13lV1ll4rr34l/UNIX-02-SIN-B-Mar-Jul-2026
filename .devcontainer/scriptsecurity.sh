@@ -113,3 +113,10 @@ ls-la ~/lab_chagrp/reportes/
 
 chgrp desarolladores ~/lab_chgrp/proyectos/app.py
 ls -la ~/lab_chgrp/proyectos/
+
+#Change the group of various files
+sudo chgrp diseno \
+~/lab_chgrp/proyectos/config.json \
+~/lab_chgrp/reportes/informe .txt
+ls -la ~/lab_chgrp/proyectos/
+ls -la ~/lab_chgrp/reportes/
