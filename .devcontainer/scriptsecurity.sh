@@ -26,3 +26,9 @@ ls -la ~/proyecto_unix
 
 lists all files inside that directory in long format, including hidden files. Since the directory was just created and is empty, it will typically only show . and .. entries, which represent the current and parent directory.
 
+#groupadd (options) group_names
+#create a simple group
+sudo groupadd developers
+sudo groupadd -g 2000 operations # Specific GID 
+# System group (GID < 1000)
+sudo groupadd --system web_services
