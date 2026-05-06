@@ -50,3 +50,32 @@ grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
 #SYS_GID_MAX = 999
 #GID_MIN = 1000
 #GID_MAX = 60000
+
+#Basic syntaxix
+# addgroup (opciones) nombre_grupo
+#Creation of groups with addgroup
+sudo addgroup diseno
+sudo addgroup --gid 2100 marketing
+sudo addgroup --system cache_web
+#verify
+grep "diseño\/marketing\/cache_web"/etc
+
+#saw which groups the current user is
+groups
+id
+#add user to a group with usermod 
+sudo usermod -aG desarolladores $USER
+sudo usermod -aG diseno $USER
+
+#The solution is to use whoami to solve the problem, showing that the user is root and letting the command in
+#IMPORTANT: Flag -a is fundamental
+#Without a, usermod is about to replace all the groups of the user, with -a adds the group manteining the existants
+#verify the change
+grep"desarolladores\|diseno"/etc/group
+
+#add user to group with adduser
+sudo adduser $USER marketing
+
+#show the actual state
+id $USER 
+grep user /etc/group
