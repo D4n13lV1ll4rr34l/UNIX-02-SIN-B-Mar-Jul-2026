@@ -79,3 +79,11 @@ sudo adduser $USER marketing
 #show the actual state
 id $USER 
 grep user /etc/group
+
+#Create a temporal group for the demo
+sudo groupadd grupo_temporal
+sudo usermod -aG grupo_temporal $USER
+id $USER #tiene grupo_temporal
+#NOW THE MISTAKE usermod without -a
+sudo usermod -G desarolladores root
+id $USER 
