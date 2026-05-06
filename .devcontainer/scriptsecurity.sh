@@ -87,3 +87,6 @@ id $USER #tiene grupo_temporal
 #NOW THE MISTAKE usermod without -a
 sudo usermod -G desarolladores root
 id $USER 
+#Restore
+sudo usermod -aG diseno,marketing,grupo_temporal root
+id root #restored
