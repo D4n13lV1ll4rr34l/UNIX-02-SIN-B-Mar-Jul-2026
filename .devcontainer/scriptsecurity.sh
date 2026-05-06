@@ -108,3 +108,8 @@ touch ~/lab_chgrp/scripts/deploy.sh
 #saw the inicial state
 ls-la ~/lab_chgrp/proyectos/
 ls-la ~/lab_chagrp/reportes/
+
+#change the group
+
+chgrp desarolladores ~/lab_chgrp/proyectos/app.py
+ls -la ~/lab_chgrp/proyectos/
