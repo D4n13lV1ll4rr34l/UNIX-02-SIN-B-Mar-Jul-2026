@@ -120,3 +120,13 @@ sudo chgrp diseno \
 ~/lab_chgrp/reportes/informe .txt
 ls -la ~/lab_chgrp/proyectos/
 ls -la ~/lab_chgrp/reportes/
+
+#change recursively all an directory
+
+chgrp -R desarolladores ~/lab_chgrp/scripts/
+ls -laR ~/lab_chgrp/scripts/
+
+#vervise for see the changes
+
+sudo chgrp -Rv diseno ~/lab_chagrp/reportes/
+
