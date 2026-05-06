@@ -32,3 +32,21 @@ sudo groupadd developers
 sudo groupadd -g 2000 operations # Specific GID 
 # System group (GID < 1000)
 sudo groupadd --system web_services
+
+#verifications of the creations:
+
+grep "desarolladores\operaciones|operaciones\|servicios_web"/etc/group
+grep -E "desarolladore|operaciones|servicios_web" /etc/group
+# View main options
+groupadd --help
+
+#Saw the range of GIDs in the system
+grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
+
+#the groups of the GID system have less GID than the users minimum
+#In ubuntu, commonly;
+
+#SYS_GID_MIN = 100
+#SYS_GID_MAX = 999
+#GID_MIN = 1000
+#GID_MAX = 60000
