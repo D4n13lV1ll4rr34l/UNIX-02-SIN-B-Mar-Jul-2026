@@ -13,3 +13,19 @@ echo "Grupo actual: $(id-gn)"
 
 touch ~/antes_de_newgrp.txt
 ls -la ~/antes_de_newgrp.txt
+
+#change to "developers" group
+#check if the active group changed
+id -gn
+echo "Nuevo grupo activo:$(id-gn)"
+#Create group in the subshell
+touch ~/dentro_de_newgrp.txt
+ls -la ~/dentro_de_newgrp.txt
+#the group is now dev
+#Create a directoy
+mkdir -p ~/proyecto_dev/src
+ls -la ~/
+exit
+#Verify to return to the original group
+id -gn
+echo "Grupo restaurado: $(id -gn)"
