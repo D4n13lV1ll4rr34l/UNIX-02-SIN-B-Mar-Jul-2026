@@ -29,3 +29,24 @@ exit
 #Verify to return to the original group
 id -gn
 echo "Grupo restaurado: $(id -gn)"
+#compare archives
+
+ls -la ~/antes_de_newgrp.txt
+~/dentro_de_newgrp.txt
+# newgrp create a new subshell -demostrable
+echo "PID del shell actual: $$"
+newgrp desarolladores
+echo "PID dentro de newgrp: $$"
+#The PID is differente, is a minor process
+
+#create a new group with a password
+sudo groupadd grupo_restringido
+sudo gpasswd grupo_restringido
+#the sistem will ask for a password in the group
+#Password; AM
+
+#An user that doesnt belongs can join if it knows the password
+newgrp grupo_restringido
+#it will ask for the password, if it is correct, it will join temporaly
+id -gn
+exit
