@@ -670,3 +670,26 @@ grep 'sysadmin'
 
 # Return to home directory after finishing exercises
 cd ~
+
+# CHAPTER 15: SYSTEM SHUTDOWN
+Safely Shutting Down the System
+# Description: Check system time and execute safe power-off commands.
+# Administrative privileges (root/sudo) are required to execute these commands.
+
+# Display the current system time and date in UTC format
+date
+
+# Execute an immediate shutdown of the system
+sudo shutdown now
+
+# Schedule a shutdown with a specific time delay (+minutes) 
+# and broadcast a custom wall message to all logged-in users
+sudo shutdown +1 "Goodbye World!"
+
+# Cancel an active scheduled shutdown execution
+sudo shutdown -c
+
+# --- ENVIRONMENT NOTE ---
+# Running 'shutdown' inside GitHub Codespaces (Docker container) results in:
+# "System has not been booted with systemd as init system (PID 1). Can't operate."
+# Containers do not manage hardware power states or run traditional init systems.
