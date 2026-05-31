@@ -1,5 +1,5 @@
  Linux Cisco Course - Command Exploration
-Author: [Your Name]
+Author: DANIEL VILLARREAL
 Description: This script documents Linux commands learned
 in the Cisco NetAcad "Linux Unhatched" course.
 BASIC COMMAND SYNTAX
@@ -562,3 +562,111 @@ dd if=/tmp/backup.img of=/dev/sda
 
 # Example (dangerous if wrong device is used):
 # dd if=/dev/sda of=/dev/sdb
+
+#CISCO Linux Course (part 2)
+
+# CHAPTER 12: FILE MANAGEMENT
+# Section 12.2: Moving Files
+# Description: Move the file 'people.csv' into the 'Work' directory.
+# The file retains its original name because no new name was specified.
+
+cd ~/Documents
+mv people.csv Work
+
+# Verify the file was moved successfully
+ls Work
+
+# CHAPTER 13: REMOVING FILES
+# Section 13.1: Removing Files and Directories
+# Description: Delete a regular file ('linux.txt') using the rm command.
+# Warning: In Linux, files deleted via 'rm' do not go to a trash bin; 
+# they are permanently deleted from the filesystem.
+
+touch linux.txt
+
+# Remove the file
+rm linux.txt
+
+# Verify the file no longer exists
+ls linux.txt
+
+# Description: Attempt to delete the 'Work' directory. 
+# Standard 'rm' fails on directories, so the recursive option '-r' (or '-R') 
+# must be used to delete the directory along with all its contents.
+
+# Running 'rm Work' would result in: rm: cannot remove 'Work': Is a directory
+rm -r Work
+
+# Verify the directory and its contents are completely gone
+ls Work
+
+# CHAPTER 14: INPUT FILTERING
+# Description: Search for lines matching a specific pattern within a file.
+# Here, we search for the pattern 'sysadmin' inside the 'passwd' file
+# to isolate the account details of that specific user.
+
+# (Ensure the file exists in your current directory before running)
+# cp /etc/passwd .
+
+grep sysadmin passwd
+
+# Expected output format:
+# sysadmin:x:1001:1001:System Administrator,,,,:/home/sysadmin:/bin/bash
+
+# Section 14.1: Regular Expressions
+# Description: Documentation of Basic and Extended Regular Expressions (Regex)
+# used as patterns with the grep command to perform advanced text filtering.
+
+# Supported by standard grep by default.
+# .    -> Matches any single character
+# [ ]  -> Matches any single character specified inside the brackets
+# [^] -> Matches any single character NOT specified inside the brackets
+# * -> Matches zero or more occurrences of the previous character
+# ^    -> Anchor: Matches the pattern only at the BEGINNING of a line
+# $    -> Anchor: Matches the pattern only at the END of a line
+
+# Requires 'egrep' or 'grep -E' to function correctly.
+# +    -> Matches one or more occurrences of the previous pattern
+# ?    -> Matches zero or one occurrence of the previous pattern (optional)
+# { }  -> Specifies exact, minimum, or maximum matches of the previous pattern
+# |    -> Logical OR (Alternation)
+# ( )  -> Groups patterns together
+
+# Section 14.2: Basic Patterns
+# Description: Use anchors to restrict matching to specific positions in a line.
+# Patterns are enclosed in single quotes to prevent the shell from misinterpreting them.
+
+# '^' Anchors the pattern to the BEGINNING of the line
+grep '^root' passwd
+
+# '$' Anchors the pattern to the END of the line
+grep 'r$' alpha-first.txt
+
+# Description: The dot (.) matches any single character except a newline.
+
+# Match words containing 'r', followed by exactly two characters, ending with 'f'
+grep 'r..f' red.txt
+
+# Match words containing 'r', followed by exactly two characters, ending with 'd'
+grep 'r..d' red.txt
+
+# Match any line containing at least four consecutive characters
+grep '....' red.txt
+
+# Match lines containing any numeric character from 0 to 9
+grep '[0-9]' profile.txt
+
+# Negation: Match lines containing any NON-numeric character
+# Note: This matches lines with text, even if they also contain numbers.
+grep '[^0-9]' profile.txt
+
+# Literal Dot: Inside brackets, special regex symbols lose their power.
+# This searches explicitly for lines containing a literal period '.'
+grep '[.]' profile.txt
+
+# Type text dynamically and press Enter to filter. Exit using Ctrl+D.
+
+grep 'sysadmin'
+
+# Return to home directory after finishing exercises
+cd ~
