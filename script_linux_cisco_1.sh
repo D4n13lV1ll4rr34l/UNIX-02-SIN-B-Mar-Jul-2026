@@ -692,4 +692,22 @@ sudo shutdown -c
 # --- ENVIRONMENT NOTE ---
 # Running 'shutdown' inside GitHub Codespaces (Docker container) results in:
 # "System has not been booted with systemd as init system (PID 1). Can't operate."
-# Containers do not manage hardware power states or run traditional init systems.
+# Containers do not manage hardware power states or run traditional init systems
+
+# CHAPTER 16: NETWORK CONFIGURATION
+# Description: Troubleshoot missing network utilities and execute ping tests.
+
+# Modern interface inspection (used because ifconfig was not present)
+ip address show
+
+# --- ENVIRONMENT TROUBLESHOOTING ---
+# If 'ping' returns 'command not found' in a minimal Docker/Codespace environment,
+# install the required package using the advanced package tool (apt):
+#
+# sudo apt-get update && sudo apt-get install -y iputils-ping
+
+# Test local loopback connectivity (4 packets)
+ping -c 4 127.0.0.1
+
+# Test external DNS resolution and routing
+ping -c 4 google.com
