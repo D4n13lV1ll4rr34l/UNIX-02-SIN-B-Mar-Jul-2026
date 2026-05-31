@@ -767,3 +767,28 @@ sudo apt-get upgrade -y
 # Completely remove a package along with all its configuration files (purge)
 # Note: 'remove' deletes the app but keeps config files; 'purge' deletes everything.
 sudo apt-get purge -y cowsay
+
+# CHAPTER 19: USER PASSWORD MANAGEMENT Updating and Viewing Password Status
+# Description: Manage user account passwords and inspect shadow password aging policies.
+# Note: Regular users can only change their own password. Root/sudo can change any password. (L1B3RT)
+
+# Change the password of the currently logged-in user
+# Requires entering the current password once and the new password twice (characters are hidden)
+passwd
+
+# View password status information for a specific user
+# Output fields breakdown:
+#   1. Username (e.g., sysadmin)
+#   2. Status flags: 'P' (Usable/Password set), 'L' (Locked), 'NP' (No password)
+#   3. Last modification date
+#   4. Minimum days required before next change
+#   5. Maximum days allowed before expiration
+#   6. Warning days prior to expiration
+#   7. Inactivity days allowed after expiration before account disable
+passwd -S sysadmin
+
+# Administrative execution: Root modifying another user's password without knowing the old one
+# sudo passwd sysadmin
+
+# Terminate administrative shell if active
+exit
