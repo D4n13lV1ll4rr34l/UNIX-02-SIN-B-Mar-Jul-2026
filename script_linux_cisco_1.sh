@@ -733,3 +733,37 @@ ps -e
 #   PPID: Parent Process ID (the process that generated this one)
 #   STIME: Start time of the process
 ps -ef
+
+# CHAPTER 18: PACKAGE MANAGEMENT Managing Software with APT
+# Description: Execute cowsay using its absolute path.
+# Note: On Ubuntu/Debian, legacy games and utilities are placed in /usr/games/
+# which might be excluded from the system's default $PATH variable.
+
+# Direct execution via absolute path
+/usr/games/cowsay 'NDG Linux Unhatched'
+
+# Alternative: Creating a terminal session alias
+# alias cowsay='/usr/games/cowsay'
+
+# Description: Search, install, update, and purge software packages in Debian-based systems.
+# Note: 'apt-get' acts as a high-level front-end interface for the low-level 'dpkg' tool.
+
+# Update the local package index cache with the remote repositories
+sudo apt-get update
+
+# Search repository package names and descriptions for a specific keyword
+apt-cache search cow
+
+# Install a software package from the repositories
+sudo apt-get install -y cowsay
+
+# Execute the installed application (enclosing string in single quotes to protect it from shell parsing)
+# /usr/games/cowsay 'NDG Linux Unhatched'
+cowsay 'NDG Linux Unhatched'
+
+# Upgrade all installed packages on the system to their latest available versions
+sudo apt-get upgrade -y
+
+# Completely remove a package along with all its configuration files (purge)
+# Note: 'remove' deletes the app but keeps config files; 'purge' deletes everything.
+sudo apt-get purge -y cowsay
