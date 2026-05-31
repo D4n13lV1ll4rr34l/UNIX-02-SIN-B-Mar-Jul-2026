@@ -711,3 +711,25 @@ ping -c 4 127.0.0.1
 
 # Test external DNS resolution and routing
 ping -c 4 google.com
+
+# CHAPTER 17: PROCESS VIEWING
+# Description: Monitor active system processes and examine execution metadata.
+# In Linux, process tracking depends heavily on User IDs (UID) for security.
+
+# Display processes running in the current terminal session only
+# Output Fields:
+#   PID: Process Identifier (unique number assigned to each running program)
+#   TTY: TeleTypewriter (the terminal device controlling the process)
+#   TIME: Cumulative CPU time used by the process
+#   CMD: The command/executable name that started the process
+ps
+
+# Display ALL processes running across the entire operating system
+ps -e
+
+# Display a full-format (-f) listing of all (-e) system processes
+# Adds critical columns:
+#   UID: User ID owning the process (controls security boundaries)
+#   PPID: Parent Process ID (the process that generated this one)
+#   STIME: Start time of the process
+ps -ef
