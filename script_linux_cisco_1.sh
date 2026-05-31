@@ -819,3 +819,68 @@ cat newfile1.txt
 
 # Note: Redirection requires Write (w) permissions on the target file.
 
+# CHAPTER 21: THE VI TEXT EDITOR Modal Text Editing
+# Description: Cheat sheet for vi/vim navigation, actions, and modes.
+# Note: vi has three main operational states: Command Mode, Insert Mode, and Ex Mode.
+
+# Open or create a file in vi
+vi viedit.txt
+
+# 1. COMMAND MODE (Default Mode - Press 'Esc' to return here) 
+
+# --- Navigation (Motion) ---
+# h / j / k / l   -> Left / Down / Up / Right (Alternative to arrow keys)
+# w / b           -> Forward one word / Backward one word
+# ^ / $           -> Move to Beginning / End of the current line
+# gg / G          -> Go to First line / Go to Last line
+# [number]G       -> Go to specific line number (e.g., 5G goes to line 5)
+# Ctrl + G        -> Display current line info status
+
+# dd / 3dd        -> Delete (cut) current line / Delete 3 lines
+# dw              -> Delete (cut) current word
+# yy / 3yy        -> Yank (copy) current line / Copy 3 lines
+# p / P           -> Put (paste) buffer text AFTER cursor / BEFORE cursor
+
+# /pattern        -> Search forward for a pattern (Press 'n' for next, 'N' for previous)
+# ?pattern        -> Search backward for a pattern
+
+# 2. INSERT MODE (Used for typing text)
+
+# i / I           -> Insert BEFORE cursor / Insert at BEGINNING of the line
+# a / A           -> Insert AFTER cursor / Insert at END of the line
+# o / O           -> Open new line BELOW current line / Open new line ABOVE
+
+# 3. EX MODE (Extended commands - Type ':' from Command Mode)
+# :w              -> Write (save) changes to the filesystem
+# :w filename     -> Save a copy as 'filename'
+# :q              -> Quit (fails if there are unsaved changes)
+# :q!             -> Force Quit discard all unsaved changes
+# :wq             -> Save changes and quit (Equivalent to 'ZZ' in Command Mode)
+
+# CHAPTER 22: NEXT STEPS AND PROFESSIONAL ROADMAP
+# Description: Overview of industry certifications mapped to this training.
+
+# Validates foundational knowledge of open-source software ecosystem (FOSS),
+# basic system architecture, command-line operations, backups, and user permissions.
+# Core Pillars:
+#   1. The Linux Community and Open Source Careers
+#   2. Finding Your Way on a Linux System
+#   3. The Power of the Command Line
+#   4. The Linux Operating System (Processes, Hardware, Data)
+#   5. Security and File Permissions
+
+# Advanced engineering track requiring two distinct evaluation exams:
+#
+# Exam 101 Core Objectives (Covered in NDG Linux I):
+#   - System Architecture
+#   - Linux Installation and Package Management (dpkg/apt, rpm/yum)
+#   - GNU and Unix Commands (Advanced Regex, text filtering, streams)
+#   - Devices, Linux Filesystems, and FHS (Filesystem Hierarchy Standard)
+#
+# Exam 102 Core Objectives (Covered in NDG Linux II):
+#   - Shells, Scripting, and Data Management
+#   - User Interfaces and Desktop Environments (X11 / Wayland / KDE)
+#   - Administrative Tasks (Syslog, cron jobs, user/group modification)
+#   - Essential System Services (SSH, Network Time Protocol, Logging)
+#   - Networking Fundamentals (Routing, DNS, IP addressing)
+#   - System Security (Firewalls, SSH keys, configuration hardening)
