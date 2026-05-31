@@ -792,3 +792,30 @@ passwd -S sysadmin
 
 # Terminate administrative shell if active
 exit
+
+# CHAPTER 20: I/O REDIRECTION Standard Output Redirection
+# Description: Learn how to redirect Standard Output (STDOUT) to create, 
+# overwrite, or append content into files.
+#
+# Core Concepts (File Descriptors):
+#   - STDIN (Standard Input): Data fed into a command (File Descriptor 0)
+#   - STDOUT (Standard Output): Normal command results displayed (File Descriptor 1)
+#   - STDERR (Standard Error): Error messages from failed executions (File Descriptor 2)
+
+# Ensure workspace focus
+cd /workspaces/UNIX-02-SIN-B-Mar-Jul-2026/Documents
+
+# 1. Overwriting Redirection (>)
+# Redirects STDOUT into a file. If the file exists, its content is entirely replaced.
+cat food.txt > newfile1.txt
+echo "I like food." > newfile1.txt
+
+# 2. Appending Redirection (>>)
+# Redirects STDOUT to the end of a file, preserving any preexisting text.
+echo "This food is good." >> newfile1.txt
+
+# Verify resulting modifications
+cat newfile1.txt
+
+# Note: Redirection requires Write (w) permissions on the target file.
+
