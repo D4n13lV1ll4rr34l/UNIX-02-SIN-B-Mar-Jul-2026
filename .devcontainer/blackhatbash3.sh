@@ -15,15 +15,14 @@ root_directory=$(ls -ld /)
 # Prints the stored root directory metadata to the terminal using the variable's value.
 echo "${root_directory}"
 
+# Assigns the string value 'Black Hat Bash' to the variable named 'book'.
+book="Black Hat Bash"
 
+# Removes (unsets) the 'book' variable from the shell environment, deleting its value.
+unset book
 
-
-
-
-
-
-
-
+# Prints the variable to the terminal, resulting in a blank line because 'book' no longer exists.
+echo "${book}"
 
 
 
