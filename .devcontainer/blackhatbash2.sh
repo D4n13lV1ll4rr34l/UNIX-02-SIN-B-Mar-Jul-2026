@@ -17,3 +17,6 @@ set n
 
 # Turns off debug mode (stops printing commands during execution).
 set +x
+
+# Runs the specified script 'blackhatbash2.sh' located inside the '.devcontainer' hidden directory using the Bash interpreter.
+bash .devcontainer/blackhatbash2.sh
