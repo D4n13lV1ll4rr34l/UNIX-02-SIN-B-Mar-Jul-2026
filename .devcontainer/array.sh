@@ -15,3 +15,8 @@ chmod u+x array.sh
 # Executes the 'array.sh' script from the current working directory (./).
 ./array.sh
 
+# Sets an array named 'IP_ADDRESSES' with three distinct IP address elements.
+IP_ADDRESSES=(192.168.1.1 192.168.1.2 192.168.1.3)
+
+# Removes the second element (index 1) from the 'IP_ADDRESSES' array.
+unset IP_ADDRESSES[1]
