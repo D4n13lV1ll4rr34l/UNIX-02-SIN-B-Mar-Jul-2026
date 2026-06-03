@@ -9,3 +9,5 @@ echo "The result is ${result}"
 # Prints the string to the terminal, substituting the variable '$result' with its current value using a short-hand syntax.
 echo "The result is $result"
 
+# Performs an arithmetic evaluation (8 multiplied by 8) and assigns the calculated value to 'result'.
+result=$((8*8))
