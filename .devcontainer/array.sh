@@ -20,3 +20,9 @@ IP_ADDRESSES=(192.168.1.1 192.168.1.2 192.168.1.3)
 
 # Removes the second element (index 1) from the 'IP_ADDRESSES' array.
 unset IP_ADDRESSES[1]
+
+# Modifies or assigns a new string value to the first element (index 0) of the 'IP_ADDRESSES' array.
+IP_ADDRESSES[0]="192.168.1.10"
+
+
+mkdir directory1 directory2 directory1
