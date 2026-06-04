@@ -1,3 +1,5 @@
+#!/bin/bash
+
 id:
 The id command in Linux is used to display a user’s identity information, including user ID (UID), group ID (GID), and group memberships.
 
