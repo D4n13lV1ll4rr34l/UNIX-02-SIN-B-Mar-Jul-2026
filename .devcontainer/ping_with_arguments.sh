@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This script pings any address provided as an argument.
 
@@ -14,7 +14,3 @@ echo "The arguments are: $@"
 
 # Display the total count of arguments passed to the script
 echo "The total number of arguments is: $#"
-
-for args in "$@"; do 
- echo "${args}" 
-done
