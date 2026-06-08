@@ -6,6 +6,7 @@ touch test && touch test123
 # Uses the ';' operator to run three commands sequentially, regardless of whether the previous ones succeed or fail.
 ls; ps; whoami
 
+
 # Groups multiple commands using '()' so their combined output can be redirected as a single unit.
 (ls; ps)
 
