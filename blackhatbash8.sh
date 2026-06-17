@@ -1,59 +1,77 @@
 #!/bin/bash
 
 # Extracts and displays the first field from each line in log.txt.
-# The first field contains the source IP address of each log entry.
+# Behavior:
+# - Prints only column $1 (IP address in Apache log format).
+# - Output is written to STDOUT.
 awk '{print $1}' log.txt
 
 
-
 # Extracts and displays the first three fields from each line in log.txt.
-# These fields typically include the IP address and the initial timestamp information.
+# Behavior:
+# - Prints $1, $2, and $3 from each line.
+# - Typically corresponds to IP + timestamp fragments depending on format.
 awk '{print $1,$2,$3}' log.txt
 
 
-
-# Extracts and displays the first and last fields from each line in log.txt.
-# $1 refers to the first field, while $NF refers to the last field in the record.
+# Extracts and displays the first and last fields from each record.
+# Behavior:
+# - $1 = first field (IP address)
+# - $NF = last field (user-agent or closing token depending on log structure)
 awk '{print $1,$NF}' log.txt
 
 
-
-# Extract and display the first column from a comma-separated values (CSV) file.
-# The -F',' option sets the field delimiter to a comma, allowing awk to
-# correctly parse and process CSV-formatted records.
+# Extract first column from a CSV file using comma as delimiter.
+# Behavior:
+# - -F',' sets comma as field separator.
+# - Prints only first column of each row.
 awk -F',' '{print $1}' example_csv.txt
 
 
-
-# Display the first lines of the log file to perform a quick inspection
-# of the recorded HTTP requests, source IP addresses, timestamps,
-# requested resources, response codes, and user-agent information.
+# Displays the first 10 lines of the log file (default head behavior).
+# Behavior:
+# - Useful for quick inspection of file structure and formatting.
+# - Does not modify the file.
 head log.txt
 
-# Replace every occurrence of the string "Mozilla" with "Godzilla"
-# throughout the log file output. The 'g' flag ensures that all
-# matches on each line are replaced, not just the first occurrence.
+
+# Replace all occurrences of "Mozilla" with "Godzilla".
+# Behavior:
+# - Stream editor transformation (sed).
+# - Only affects output; original file remains unchanged.
 sed 's/Mozilla/Godzilla/g' log.txt
 
-# Filter log entries originating from the IP address 42.236.10.117
-# and extract the seventh field, which corresponds to the requested
-# resource or URL path in the Apache access log format.
+
+# Filters logs by IP and extracts the 7th field.
+# Behavior:
+# - grep selects matching lines for the IP 42.236.10.117.
+# - awk extracts field $7 (requested resource path in Apache logs).
 grep "42.236.10.117" log.txt | awk '{print $7}'
 
-# Replace all occurrences of the string "Mozilla" with "Godzilla"
-# and save the modified output to a new file named newlog.txt.
-# The original log.txt file remains unchanged.
+
+# Replace "Mozilla" with "Godzilla" and save output to a new file.
+# Behavior:
+# - Output redirection (>) creates/overwrites newlog.txt.
+# - Original log.txt is not modified.
 sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
 
-# Verify that all occurrences of "Mozilla" were replaced with "Godzilla"
-# by searching for the new string in the modified log file.
+
+# Verify replacement by searching for "Godzilla".
+# Behavior:
+# - If output appears, replacement was successful.
+# - No output = no matches found.
 grep "Godzilla" newlog.txt
 
-# Resume job number 1 (previously suspended or sent to background)
-# and bring it to the foreground so it becomes the active process.
+
+# Bring job 1 to foreground execution.
+# Behavior:
+# - Resumes suspended/background job %1.
+# - Terminal is blocked until job finishes or is interrupted.
 fg %1
 
-# Pause execution for 100 seconds.
-# During this time, the shell waits without executing other commands
-# in the current session unless interrupted.
-sleep 100
+
+# Pause execution for 10 seconds.
+# Behavior:
+# - Shell waits with no output.
+# - Execution resumes after timeout.
+sleep 10
