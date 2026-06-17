@@ -48,3 +48,12 @@ sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
 # Verify that all occurrences of "Mozilla" were replaced with "Godzilla"
 # by searching for the new string in the modified log file.
 grep "Godzilla" newlog.txt
+
+# Resume job number 1 (previously suspended or sent to background)
+# and bring it to the foreground so it becomes the active process.
+fg %1
+
+# Pause execution for 100 seconds.
+# During this time, the shell waits without executing other commands
+# in the current session unless interrupted.
+sleep 100
